@@ -1,7 +1,7 @@
 import React from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 
-const PaginationBasic = () => {
+const Paginations = () => {
   let active = 1;
   let items = [];
   for (let number = 1; number <= 5; number++) {
@@ -19,4 +19,4 @@ const PaginationBasic = () => {
   );
 };
 
-export default PaginationBasic;
+export default Paginations;

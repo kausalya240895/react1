@@ -1,24 +1,38 @@
 import React, { useEffect, useState } from "react";
 import  './App.css';
 import TodoList from "./Components/TodoList";
-import NavBar from "./Components/NavBar";
-import Cards from "./Components/Cards";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import PaginationBasic from "./Components/Pagination";
+import Home from "./Components/Home";
+import Plants from "./Components/Plants";
+import Paginations from "./Components/Paginations";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Contact from "./Components/Contact";
 
 function App(){
-  return(
-    <>
-    <div className="to-list">
-    {/*<TodoList/>*/}
-    <NavBar/>
-    <Cards/>
-    <PaginationBasic/>
-    </div>
-    </>
+  return(    
+    <BrowserRouter>
+    <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">Shopy</Navbar.Brand>
+          <Nav className="me-auto">
+            <Link to="/">Home</Link>
+            <Link to="/plants">Plants</Link>
+            <Link to="/contact">Contact</Link>
+          </Nav>
+        </Container>
+      </Navbar>    
+
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/plants' element={<Plants/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+    </Routes>
+    </BrowserRouter>       
   )
 }
-
+export default App;
 
 {/*function App(){
   const[count,setCount]=useState(0)
@@ -91,4 +105,3 @@ return(
 );
 };  */}  
 
-export default App;

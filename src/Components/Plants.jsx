@@ -1,7 +1,8 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function Cards() {
+function Plants() {
   return (
     <>
     <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
@@ -130,5 +131,5 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default Plants;
 
